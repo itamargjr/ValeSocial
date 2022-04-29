@@ -18,9 +18,11 @@ public class ValeSocialDao extends Dao {
 	                  "origem2_valesoc, destino2_valesoc, tipotransp2_valesoc, origem3_valesoc, " +
 	                  "destino3_valesoc, tipotransp3_valesoc, enviadosetrans_valesoc, recebidosetrans_valesoc, " +
 	                  "resultadosetrans_valesoc, analisadosetrans_valesoc, tipodef_valesoc, cid_valesoc, " +
-	                  "acompanhante_valesoc, frequenciatrat_valesoc, motindefer_valesoc) " +
+	                  "acompanhante_valesoc, frequenciatrat_valesoc, motindefer_valesoc, " +
+	                  "codposto_valesoc, nomeposto_valesoc, procsetrans_valesoc, tiporeq_valesoc) " +
 		              "values (0, DATE_FORMAT(sysdate(),'%d/%m/%Y'), ?, ?, ?, ?, ?,  ?, " +
-	                  "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";	
+	                  "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, " +
+		              "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";	
 	
 		
 	
@@ -69,6 +71,10 @@ public class ValeSocialDao extends Dao {
 		}		
 		
 		stmt.setString(35, vs.getMotindefer_valesoc());
+		stmt.setString(36, vs.getCodposto_valesoc());
+		stmt.setString(37, vs.getNomeposto_valesoc());
+		stmt.setString(38, vs.getProcsetrans_valesoc());
+		stmt.setString(39, vs.getTiporeq_valesoc());
 
 		stmt.executeUpdate();
 

@@ -38,6 +38,10 @@ public class ValeSocial {
 	private String acompanhante_valesoc;
 	private Integer frequenciatrat_valesoc;
 	private String motindefer_valesoc;
+	private String codposto_valesoc;
+	private String nomeposto_valesoc;
+	private String procsetrans_valesoc;
+	private String tiporeq_valesoc;
 	
 	public ValeSocial() {
 		super();
@@ -52,7 +56,8 @@ public class ValeSocial {
 			String tipotransp2_valesoc, String origem3_valesoc, String destino3_valesoc, String tipotransp3_valesoc,
 			String enviadosetrans_valesoc, String recebidosetrans_valesoc, String resultadosetrans_valesoc,
 			String analisadosetrans_valesoc, String tipodef_valesoc, String cid_valesoc, String acompanhante_valesoc,
-			Integer frequenciatrat_valesoc, String motindefer_valesoc) {
+			Integer frequenciatrat_valesoc, String motindefer_valesoc, String codposto_valesoc,
+			String nomeposto_valesoc, String procsetrans_valesoc, String tiporeq_valesoc) {
 		super();
 		this.id_valesoc = id_valesoc;
 		this.data_valesoc = data_valesoc;
@@ -91,6 +96,42 @@ public class ValeSocial {
 		this.acompanhante_valesoc = acompanhante_valesoc;
 		this.frequenciatrat_valesoc = frequenciatrat_valesoc;
 		this.motindefer_valesoc = motindefer_valesoc;
+		this.codposto_valesoc = codposto_valesoc;
+		this.nomeposto_valesoc = nomeposto_valesoc;
+		this.procsetrans_valesoc = procsetrans_valesoc;
+		this.tiporeq_valesoc = tiporeq_valesoc;
+	}
+
+	public String getCodposto_valesoc() {
+		return codposto_valesoc;
+	}
+
+	public void setCodposto_valesoc(String codposto_valesoc) {
+		this.codposto_valesoc = codposto_valesoc;
+	}
+
+	public String getNomeposto_valesoc() {
+		return nomeposto_valesoc;
+	}
+
+	public void setNomeposto_valesoc(String nomeposto_valesoc) {
+		this.nomeposto_valesoc = nomeposto_valesoc;
+	}
+
+	public String getProcsetrans_valesoc() {
+		return procsetrans_valesoc;
+	}
+
+	public void setProcsetrans_valesoc(String procsetrans_valesoc) {
+		this.procsetrans_valesoc = procsetrans_valesoc;
+	}
+
+	public String getTiporeq_valesoc() {
+		return tiporeq_valesoc;
+	}
+
+	public void setTiporeq_valesoc(String tiporeq_valesoc) {
+		this.tiporeq_valesoc = tiporeq_valesoc;
 	}
 
 	public String getData_valesoc() {
@@ -408,6 +449,8 @@ public class ValeSocial {
 				+ resultadosetrans_valesoc + ", analisadosetrans_valesoc=" + analisadosetrans_valesoc
 				+ ", tipodef_valesoc=" + tipodef_valesoc + ", cid_valesoc=" + cid_valesoc + ", acompanhante_valesoc="
 				+ acompanhante_valesoc + ", frequenciatrat_valesoc=" + frequenciatrat_valesoc + ", motindefer_valesoc="
-				+ motindefer_valesoc + "]";
+				+ motindefer_valesoc + ", codposto_valesoc=" + codposto_valesoc + ", nomeposto_valesoc="
+				+ nomeposto_valesoc + ", procsetrans_valesoc=" + procsetrans_valesoc + ", tiporeq_valesoc="
+				+ tiporeq_valesoc + "]";
 	}
 }

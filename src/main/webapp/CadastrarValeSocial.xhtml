@@ -18,75 +18,63 @@
     		
     			<p:growl id="growl" showDetail="true" sticky="true" /> 
     		
-    			<p:panel header="Dados do Candidato">
+    			<p:panel header="Dados Cadastrais">
     				<div class="ObjetosLinha">
 						<div class="ObjetosColuna">
+							<p:outputLabel value="Nome do Requerente"/>
+      						<p:inputText onfocus="StringMaiuscula(this, -1)" value="#{valesocialBean.valesocial.requerente_valesoc}" styleClass="TamanhoM" required="true" requiredMessage="por favor informe o nome do requerente"/>
+      					</div> 
+      					<div class="ObjetosColuna">
 							<p:outputLabel value="Data de Nascimento" />
-							<p:inputText  onfocus="Data(this)" value="#{edu_matr_candidatoBean.candidato.nascimento_candidato}" class="TamanhoMIN" required="true" requiredMessage="por favor informe a data de nascimento">
-								<p:ajax listener="#{edu_matr_candidatoBean.calculaidade()}" update=":formcadastro " />
-							</p:inputText>
+							<p:inputText  onfocus="Data(this)" value="#{valesocialBean.valesocial.nascimento_valesoc}" class="TamanhoMIN" required="true" requiredMessage="por favor informe a data de nascimento" />
 						</div>
 						<div class="ObjetosColuna">
-							<p:outputLabel value="Nome do Candidato"/>
-      						<p:inputText onfocus="StringMaiuscula(this, -1)" value="#{edu_matr_candidatoBean.candidato.nome_candidato}" styleClass="TamanhoM" required="true" requiredMessage="por favor informe o nome do candidato"/>
-      					</div>        					
-						<div class="ObjetosColuna">
-							<p:outputLabel id="olIdade" value="Idade em 31/03/2022"  rendered="#{edu_matr_candidatoBean.idade != ''}" />
-							<p:inputText onfocus="StringMaiuscula(this, -1)" value="#{edu_matr_candidatoBean.idade} anos e #{edu_matr_candidatoBean.meses} meses" styleClass="TamanhoPP" rendered="#{edu_matr_candidatoBean.idade != ''}" disabled="true"/>
-						</div>
-						<div class="ObjetosColuna">
-							<p:outputLabel value="Bairro Candidato" />
-							<p:selectOneMenu value="#{edu_matr_candidatoBean.candidato.bairro_candidato}" styleClass="TamanhoSelectMIN" required="true" requiredMessage="por favor informe o bairro que o candidato reside">
+							<p:outputLabel value="Sexo" />
+							<p:selectOneMenu value="#{valesocialBean.valesocial.sexo_valesoc}" styleClass="TamanhoSelectMIN" required="true" requiredMessage="por favor informe o sexo">
 								<f:selectItem itemValue="" itemLabel="" />
-								<f:selectItem itemValue="Bairro da Mina" itemLabel="Bairro da Mina" />
-								<f:selectItem itemValue="Cabral" itemLabel="Cabral" /> 
-								<f:selectItem itemValue="Cabuis" itemLabel="Cabuis" />
-								<f:selectItem itemValue="Centro" itemLabel="Centro" />
-								<f:selectItem itemValue="Frigorífico" itemLabel="Frigorífico" />
-								<f:selectItem itemValue="Manoel Reis" itemLabel="Manoel Reis" />
-								<f:selectItem itemValue="N. S. de Fátima" itemLabel="N. S. de Fátima" />
-								<f:selectItem itemValue="Nova Cidade" itemLabel="Nova Cidade" />
-								<f:selectItem itemValue="Novo Horizonte" itemLabel="Novo Horizonte" />
-								<f:selectItem itemValue="Olinda" itemLabel="Olinda" />
-								<f:selectItem itemValue="Paiol" itemLabel="Paiol" />
-								<f:selectItem itemValue="Santos Dumont" itemLabel="Santos Dumont" />
-								<f:selectItem itemValue="Tropical" itemLabel="Tropical" />
-								<f:selectItem itemValue="Outro" itemLabel="Outro Município" />									
+								<f:selectItem itemValue="Masculino" itemLabel="M" />
+								<f:selectItem itemValue="Femenino" itemLabel="F" />									
 							</p:selectOneMenu>
 						</div>
 					</div>
 					<div class="ObjetosLinha">
 						<div class="ObjetosColuna">
       						<p:outputLabel value="CPF"/>
-      						<p:inputText onfocus="Cpf(this)" value="#{edu_matr_candidatoBean.candidato.cpf_candidato}" styleClass="TamanhoM" required="true" requiredMessage="por favor informe o CPF"/>
+      						<p:inputText onfocus="Cpf(this)" value="#{valesocialBean.valesocial.cpf_valesoc}" styleClass="TamanhoM" required="true" requiredMessage="por favor informe o CPF"/>
+      					</div>
+						<div class="ObjetosColuna">
+      						<p:outputLabel value="Nome do Responsável"/>
+      						<p:inputText onfocus="StringMaiuscula(this, -1)" value="#{valesocialBean.valesocial.nomeresp_valesoc}" styleClass="TamanhoM"/>
       					</div> 
 						<div class="ObjetosColuna">
-							<p:outputLabel value="Sexo" />
-							<p:selectOneMenu value="#{edu_matr_candidatoBean.candidato.sexo_candidato}" styleClass="TamanhoSelectMIN" required="true" requiredMessage="por favor informe o sexo">
-								<f:selectItem itemValue="" itemLabel="" />
-								<f:selectItem itemValue="M" itemLabel="Masculino" />
-								<f:selectItem itemValue="F" itemLabel="Feminino" /> 								
-							</p:selectOneMenu>
-						</div>
-						<div class="ObjetosColuna">
-							<p:outputLabel value="Nacionalidade" />
-							<p:selectOneMenu value="#{edu_matr_candidatoBean.candidato.nacionalidade_candidato}" styleClass="TamanhoSelectMIN" required="true" requiredMessage="por favor informe a nacionalidade">
-								<f:selectItem itemValue="" itemLabel="" />
-								<f:selectItem itemValue="BRASILEIRA" itemLabel="Brasileira" />
-								<f:selectItem itemValue="OUTRA" itemLabel="Outra" />								
-							</p:selectOneMenu>
-						</div>
+      						<p:outputLabel value="CPF do Responsável"/>
+      						<p:inputText onfocus="Cpf(this)" value="#{valesocialBean.valesocial.cpfresp_valesoc}" styleClass="TamanhoM" />
+      					</div> 
 					</div>
-				</p:panel>
-				<p:panel header="Filiação do Candidato">
-					<div class="ObjetosLinha">    					
+
+					<div class="ObjetosLinha">						 
+      					<div class="ObjetosColuna">
+      						<p:outputLabel value="Identidade"/>
+      						<p:inputText onfocus="Cpf(this)" value="#{valesocialBean.valesocial.identidade_valesoc}" styleClass="TamanhoM" />
+      					</div>  
+						<div class="ObjetosColuna">
+							<p:outputLabel value="Órgão Emissor" />
+							<p:selectOneMenu value="#{valesocialBean.valesocial.orgaoidt_valesocc}" styleClass="TamanhoSelectMIN">
+								<f:selectItem itemValue="" itemLabel="" />
+								<f:selectItem itemValue="Masculino" itemLabel="M" />
+								<f:selectItem itemValue="Femenino" itemLabel="F" />									
+							</p:selectOneMenu>
+						</div>  
+      				</div>
+
+					<div class="ObjetosLinha">					
 						<div class="ObjetosColuna">
       						<p:outputLabel value="Nome da Mãe"/>
-      						<p:inputText onfocus="StringMaiuscula(this, -1)" value="#{edu_matr_candidatoBean.candidato.mae_candidato}" styleClass="TamanhoM"/>
+      						<p:inputText onfocus="StringMaiuscula(this, -1)" value="#{valesocialBean.valesocial.mae_candidato}" styleClass="TamanhoM"/>
       					</div>  
       					<div class="ObjetosColuna">
       						<p:outputLabel value="Nome do Pai"/>
-      						<p:inputText onfocus="StringMaiuscula(this, -1)" value="#{edu_matr_candidatoBean.candidato.pai_candidato}" styleClass="TamanhoM"/>
+      						<p:inputText onfocus="StringMaiuscula(this, -1)" value="#{valesocialBean.valesocial.pai_candidato}" styleClass="TamanhoM"/>
       					</div> 
       				</div>
 	      		</p:panel>
@@ -102,11 +90,11 @@
 					<div class="ObjetosLinha">    					
 						<div class="ObjetosColuna">
       						<p:outputLabel id="lblIrmao" value="Nome do irmão ou irmã" />
-      						<p:inputText id="txtIrmao" onfocus="StringMaiuscula(this, -1)" value="#{edu_matr_candidatoBean.candidato.nomeirmao_candidato}" styleClass="TamanhoM"/>
+      						<p:inputText id="txtIrmao" onfocus="StringMaiuscula(this, -1)" value="#{valesocialBean.valesocial.nomeirmao_candidato}" styleClass="TamanhoM"/>
       					</div>  
       					<div class="ObjetosColuna">
 							<p:outputLabel id="lblEscolairmao" value="Escola onde o irmão ou irmã estuda"/>
-							<p:selectOneMenu id="comboEscolaIrmao" value="#{edu_matr_candidatoBean.candidato.id_escola}" styleClass="TamanhoSelectM" >
+							<p:selectOneMenu id="comboEscolaIrmao" value="#{valesocialBean.valesocial.id_escola}" styleClass="TamanhoSelectM" >
       							<f:selectItem itemValue="0" itemLabel="" />
 								<f:selectItems value="#{edu_matr_candidatoBean.escolalista}" var="esc" itemValue="#{esc.id_escola}" itemLabel="#{esc.nome_escola}" /> 
 							</p:selectOneMenu>
@@ -118,18 +106,18 @@
 					<div class="ObjetosLinha">  	
       					<div class="ObjetosColuna">
 							<p:outputLabel value="Email"/>
-      						<p:inputText value="#{edu_matr_candidatoBean.candidato.email_candidato}" styleClass="TamanhoG"/>
+      						<p:inputText value="#{valesocialBean.valesocial.email_candidato}" styleClass="TamanhoG"/>
       					</div> 
       				</div>  	
       				<div class="ObjetosLinha">  			  					
 						<div class="ObjetosColuna">
 							<p:outputLabel value="Telefone ou celular"/>
-      						<p:inputText value="#{edu_matr_candidatoBean.candidato.celular_candidato}" styleClass="TamanhoM"/>
+      						<p:inputText value="#{valesocialBean.valesocial.celular_candidato}" styleClass="TamanhoM"/>
       					</div> 
       					
       					<div class="ObjetosColuna">
 							<p:outputLabel value="Telefone ou celular"/>
-      						<p:inputText value="#{edu_matr_candidatoBean.candidato.fixo_candidato}" styleClass="TamanhoM"/>
+      						<p:inputText value="#{valesocialBean.valesocial.fixo_candidato}" styleClass="TamanhoM"/>
       					</div>
 					</div>
       			</p:panel> 
@@ -212,7 +200,7 @@
 	      				</div>
       					<div class="ObjetosColuna">
 							<p:outputLabel value="CID" />
-							<p:inputText value="#{edu_matr_candidatoBean.candidato.cid_candidato}" styleClass="TamanhoM"/>							
+							<p:inputText value="#{valesocialBean.valesocial.cid_candidato}" styleClass="TamanhoM"/>							
 						</div> 
       				</div>
 	      		</p:panel>
